@@ -1,0 +1,33 @@
+class Solution
+{
+	private:
+	    void solve(string S,set<string>&ans,int l,int  r)
+	    {
+	        if(l==r){
+	            ans.insert(S);
+	            return ;
+	        }else{
+	        for(int j=l;j<r;j++)
+	        {
+	            swap(S[l],S[j]);
+	            solve(S,ans,l+1,r);
+	            swap(S[l],S[j]);
+	        }
+	        }
+	    }
+	    public:
+		vector<string>find_permutation(string S)
+		{
+		    set<string>ans;
+		    int l=0;
+		    int r=S.length();
+		    solve(S,ans,l,r);
+		    
+		    vector<string>res;
+		    for(auto it:ans)
+		    res.push_back(it);
+		    
+		    return res;
+		    
+		}
+};
