@@ -1,0 +1,33 @@
+class Solution
+{
+    public:
+    
+    void quickSort(int arr[], int low, int high)
+    {
+        if(low<high)
+        {
+        int p=partition(arr,low,high);
+        quickSort(arr,low,p-1);
+        quickSort(arr,p+1,high);
+        }
+    }
+    
+    public:
+    int partition (int arr[], int low, int high)
+    {
+       int pivot = arr[high];
+      int j = -1;
+       for(int i = 0;i<high;i++)
+    if(arr[i]<=pivot){
+                j++;
+       int temp = arr[i];
+         arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        j++;
+        int tmp = arr[j];
+        arr[j] = pivot;
+        arr[high] = tmp;
+        return j;
+    }
+};
