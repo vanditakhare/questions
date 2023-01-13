@@ -1,0 +1,16 @@
+class Solution{
+public:
+    bool isLucky(int n) {
+        int i=2;
+        while(i<=n)
+         {
+        if(n%i == 0) {
+                return false;
+            }
+            int div = n/i;
+            n -= div;
+            i += 1;
+        }
+        return true;
+    }
+};
