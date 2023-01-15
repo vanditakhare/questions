@@ -1,0 +1,19 @@
+void add_value(map<int,int> &m,int x,int y)
+{
+    m[x]=y;
+}
+int find_value(map<int,int> &m,int x)
+{
+  if(m.find(x) != m.end()){
+     return m[x];
+  }
+  else return -1;
+}
+void print_contents(map<int,int> &m)
+{
+    for(auto it:m)
+  {
+      cout<<it.first<<" "<<it.second<<" ";
+
+   }
+}
