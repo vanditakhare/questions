@@ -1,0 +1,15 @@
+bool pairWiseConsecutive(stack<int> s)
+{
+   if(s.size()%2!=0)
+   s.pop();
+   while(!s.empty())
+   {
+       int x=s.top();
+       s.pop();
+       if(x-1!=s.top())
+       return 0;
+        x=s.top();
+        s.pop();
+   }
+   return 1;
+}
