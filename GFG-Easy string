@@ -1,0 +1,22 @@
+string transform(string S){
+    string ans;
+    for(int i=0;i<S.length();i++)
+    {
+        if(S[i]-'A'>=0&&S[i]-'A'<26)
+        S[i]=S[i]+32;
+
+   }
+   int i=0,count=0;
+   while(i<S.length())
+  {
+    char ch=S[i];
+    count=0;
+    while(S[i]==ch)
+    {
+    count++;
+    i++;
+    }
+    ans=ans+to_string(count)+ch;
+   }
+   return ans;
+}
