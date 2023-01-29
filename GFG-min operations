@@ -1,0 +1,3 @@
+if(a==b) return 0; //Case 1
+if((a&b)==a || (a&b)==b) return 1; //Case 2
+return 2; //Case 3
