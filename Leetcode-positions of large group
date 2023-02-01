@@ -1,0 +1,22 @@
+class Solution {
+public:
+    vector<vector<int>> largeGroupPositions(string s) {
+        vector<vector<int>>ans;
+        s.push_back('0');
+          int last =0;
+          int c=1;
+        int n=s.length();
+        for(int i=1;i<n;i++){
+            if(s[i]==s[i-1])
+            c++;
+            else{
+                 if(c>=3){
+                ans.push_back({last,i-1});
+            }
+            last=i;
+            c=1;
+            }
+        }
+        return ans;
+    }
+};
