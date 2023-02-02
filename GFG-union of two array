@@ -1,0 +1,26 @@
+class Solution{
+    public:
+    
+    vector<int> findUnion(int arr1[], int arr2[], int n, int m)
+    {
+       vector<int>v;
+       for(int i=0;i<n;i++){
+           v.push_back(arr1[i]);
+       }
+       for(int i=0;i<m;i++){
+           v.push_back(arr2[i]);
+       }
+       unordered_map<int,int>l;
+       for(int i=0;i<v.size();i++){
+           l[v[i]]++;
+       }
+       vector<int>s;
+       for(auto i:l){
+           s.push_back(i.first);
+       }
+       sort(s.begin(),s.end());
+
+        return s;
+       
+    }
+};
