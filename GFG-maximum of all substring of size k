@@ -1,0 +1,27 @@
+class Solution
+{
+  public:
+   
+    vector <int> max_of_subarrays(int *arr, int n, int k)
+    {
+        vector <int>a;
+        priority_queue<pair<int,int>>q;
+       
+        for(int i=0;i<k;i++){
+            q.push({arr[i],i});
+        }
+           
+            a.push_back(q.top().first);
+        
+        for(int i=k;i<n;i++){
+            q.push({arr[i],i});
+            while(!q.empty()&&i-q.top().second>=k){
+                q.pop();
+            }
+            
+            a.push_back(q.top().first);
+        }
+        return a;
+        
+    }
+};
